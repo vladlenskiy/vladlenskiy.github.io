@@ -24,7 +24,7 @@ $link: hsl(171, 100%, 41%);
 
 // Custom Styles
 .card-gap {margin-top:1.75rem}
-.modal-trigger { cursor: pointer; }
+.modal-trigger { cursor: pointer; max-width: 210px; }
 a.icon > strong {margin-left:.25rem}
 .modal-card-body div.content {margin:$margin-default}
 
@@ -38,8 +38,18 @@ a.icon > strong {margin-left:.25rem}
     @return map-get($theme-colors, $key);
 }
 
-// Flickity - begin
-.carousel-cell {width:100%}
-// Flickity - end
-
- 
+.carousel-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Обрезка лишних частей */
+    width: 100%;
+    height: 100%; /* Высота контейнера */
+  }
+  
+  .carousel-cell img {
+    width: auto; /* Автоматическая ширина */
+    height: 100%; /* Занимает всю высоту контейнера */
+    object-fit: contain; /* Масштабирование без обрезки */
+    display: block;
+  }

@@ -61,7 +61,8 @@ function closeModals() {
 function initCarousel(id) {
     return new Flickity('#' + id, {
         imagesLoaded: true,
-        adaptiveHeight: true // https://github.com/metafizzy/flickity/issues/11
+        adaptiveHeight: true, // https://github.com/metafizzy/flickity/issues/11
+        cellAlign: 'center'
     });
 }
 
